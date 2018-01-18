@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -174,6 +176,36 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\db\Category.cs">
+      <DependentUpon>datamodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\Chanel.cs">
+      <DependentUpon>datamodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\datamodel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datamodel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\datamodel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datamodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\datamodel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datamodel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\Favoriteprogram.cs">
+      <DependentUpon>datamodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\Person.cs">
+      <DependentUpon>datamodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db\Program.cs">
+      <DependentUpon>datamodel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -186,8 +218,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\db\datamodel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>datamodel.edmx</DependentUpon>
+      <LastGenOutput>datamodel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\db\datamodel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>datamodel.edmx</DependentUpon>
+      <LastGenOutput>datamodel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\db\datamodel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>datamodel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\db\datamodel.edmx.diagram">
+      <DependentUpon>datamodel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -245,6 +294,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
